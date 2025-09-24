@@ -1,9 +1,10 @@
 use dioxus::prelude::*;
 
 use crate::{
-    components::channel_list::PeonyChannelList,
     datastructures::PeonyData,
     views::view_messages::PeonyMessagesView,
+    views::view_channels::PeonyChannelsView,
+    views::view_members::PeonyMembersView,
 };
 
 #[component]
@@ -29,7 +30,8 @@ pub fn PeonyServerView(server_id: String, channel_id : String) -> Element {
 
 
     rsx! {
-        PeonyChannelList { server: found_server.clone(), current_channel: found_channel.clone() }
-        PeonyMessagesView { channel: found_channel.clone() }
+        PeonyChannelsView { server: found_server.clone(), current_channel: found_channel.clone() }
+        PeonyMessagesView { channel: found_channel.clone() },
+        //PeonyMembersView { server: found_server.clone(), current_channel: found_channel.clone() }
     }
 }

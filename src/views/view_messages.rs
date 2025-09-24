@@ -1,4 +1,4 @@
-use dioxus::prelude::*;
+use dioxus::{html::h3, prelude::*};
 
 use crate::{components::message::Message, datastructures::ChatChannel};
 
@@ -11,15 +11,17 @@ pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
                 
                 div {
                     class: "sidebar-messages-header",
-                    "# {channel.name}"
+                    h3 {
+                        "# {channel.name}"
+                    }
                     div {
                         class: "sidebar-messages-subheader",
                         "Messages for #{channel.name}."
                     }
                 }
                 ol {
-                    class: "list peony-scrollbar peony-scrollbar",
-                    for _x in 1..100 {
+                    class: "list reverse-list messages-list peony-scrollbar",
+                    for _x in 0..4 {
                         li {
                             Message {
                                 display_name: "Tickle Monster",
@@ -27,6 +29,12 @@ pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
                                 message_content: "I'm here to tickle you."
                             }
                         }
+                    }
+                }
+                div {
+                    class: "messages-bar",
+                    textarea {
+                        placeholder: "Message #{channel.name}"
                     }
                 }
             }

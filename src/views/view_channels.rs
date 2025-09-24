@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 use crate::datastructures::*;
 
 #[component]
-pub fn PeonyChannelList(server : Option<ChatServer>, current_channel : Option<ChatChannel>) -> Element {
+pub fn PeonyChannelsView(server : Option<ChatServer>, current_channel : Option<ChatChannel>) -> Element {
     rsx! {
         div {
             class: "sidebar-channels",
@@ -12,7 +12,7 @@ pub fn PeonyChannelList(server : Option<ChatServer>, current_channel : Option<Ch
                 }
 
                 ol {
-                    class: "list peony-scrollbar peony-scrollbar-hover",
+                    class: "list peony-scrollbar channels-list peony-scrollbar-hover",
                     
                     for channel in &server.channels {
                         li {
@@ -31,7 +31,7 @@ pub fn PeonyChannelList(server : Option<ChatServer>, current_channel : Option<Ch
                                     } else {
                                         "channel-name"
                                     },
-                                    p { "#{channel.name}" }
+                                    p { "# {channel.name}" }
                                 }
                             }
                         }

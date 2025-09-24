@@ -15,21 +15,26 @@ pub fn Message(display_name : String, timestamp : String, message_content : Stri
         div {
             class: "message",
             div {
-                class: "message-header",
+                class: "avatar",
+                "{characters}"
+            },
+            div {
+                class: "contents",
                 div {
-                    class: "avatar",
-                    "{characters}"
-                },
-                div {
-                    class: "message-header-info",
-                    "{display_name}",
-                    
+                    class: "header",
+                    div {
+                        class: "name",
+                        "{display_name}"
+                    }
                     span {
-                        " • {timestamp}"
-                    }   
-
-                    p { "{message_content}" }
+                        class: "timestamp",
+                        "{timestamp}"
+                    }
                 },
+                span {
+                    class: "content",
+                    "{message_content}"
+                }
             }
         }
     }
