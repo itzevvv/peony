@@ -7,8 +7,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-wasm-bindgen = "=0.2.99"
-dioxus = { version = "0.6.0", features = ["fullstack", "router"] }
+wasm-bindgen = "=0.2.105"
+dioxus = { version = "0.7.2", features = ["fullstack", "router"] }
 tulip = { path = "../tulip" }
 
 [features]
