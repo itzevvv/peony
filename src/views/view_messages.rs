@@ -18,9 +18,9 @@ pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
                         class: "sidebar-messages-subheader",
                         "Messages for #{channel.name}."
                     }
-                    hr {
-                        
-                    }
+                }
+                hr {
+                    class: "sidebar-messages-separator" 
                 }
                 ol {
                     class: "list reverse-list messages-list peony-scrollbar",

@@ -1,6 +1,14 @@
+:root {
+    --accent-primary-dark: #0e0f11;
+    --accent-secondary-dark: #292b2f;
+    --accent-tertiary-dark: #2f3136;
+    --accent-hover-dark: #191b1f;
+    --channel-name-dark: #989898;
+    --channel-name-hover-dark: #f0f0f0;
+}
 /* App-wide styling */
 body {
-    background-color: #0f1116;
+    background-color: var(--accent-primary-dark);
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -30,7 +38,6 @@ hr {
 .sidebar-channels {
     width: 14em;
     gap: 100px;
-    padding-right: 1em;
 }
 
 .peony-scrollbar {
@@ -79,7 +86,7 @@ hr {
 }
 
 .channels-list {
-    background-color: #090b0e;
+    background-color: var(--accent-primary-dark);
     border-radius: 15px;
 }
 
@@ -87,7 +94,7 @@ hr {
     display: flex;
     vertical-align: middle;
     font-weight: bold;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 
 .sidebar-messages-subheader {
@@ -98,6 +105,15 @@ hr {
     font-size: 14px;
     padding-left: 10px;
     padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.sidebar-messages-separator {
+    display: flex;
+    border: 0;
+    border-top: 1px solid #707070;
+    width: 100%;
+    padding-bottom: 10px;
 }
 
 .server-icon {
@@ -132,14 +148,15 @@ hr {
 .channel-name {
     display: flex;
     align-items: center;
-    
+    color: var(--channel-name-dark);
     height: 2.4em;
     border-radius: 10px;
     margin-bottom: 2px;
     padding-left: 1em;
 
     &:hover {
-        background-color:black;
+        background-color: var(--accent-hover-dark);
+        color: var(--channel-name-hover-dark);
 
         user-select: none;
         -moz-user-select: none;
@@ -158,7 +175,8 @@ hr {
     padding-left: 1em;
     gap: 1em;
     
-    background-color:black;
+    background-color: var(--accent-hover-dark);
+    color: var(--channel-name-hover-dark);
 
     user-select: none;
     -moz-user-select: none;
@@ -201,10 +219,9 @@ hr {
 
 .message {
     background-color: transparent;
-    padding-left: 15px;
     padding-top: 10px;
+    padding-left: 15px;
     padding-bottom: 10px;
-    border-radius: 10px;
     display: flex;
     align-items: flex-start;
     word-wrap: break-word;
@@ -212,7 +229,7 @@ hr {
     gap: 12px;
     
     &:hover {
-        background-color: black;
+        background-color: var(--accent-hover-dark);
     }
 
     .contents {
@@ -245,7 +262,7 @@ hr {
 }
 
 .messages-bar {
-    background-color: black;
+    background-color: var(--accent-secondary-dark);
     display: flex;
     position: relative;
     height: 58px;
