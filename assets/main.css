@@ -1,7 +1,7 @@
 :root {
     --accent-primary-dark: #0e0f11;
     --accent-secondary-dark: #292b2f;
-    --accent-tertiary-dark: #2f3136;
+    --accent-tertiary-dark: #1f1d1d;
     --accent-hover-dark: #191b1f;
     --channel-name-dark: #989898;
     --channel-name-hover-dark: #f0f0f0;
@@ -78,42 +78,43 @@ hr {
 }
 
 .messages-list {
-    height: 90%;
+    height: 85%;
 }
 
 .sidebar-messages {
     flex-grow: 1;
-}
-
-.channels-list {
-    background-color: var(--accent-primary-dark);
-    border-radius: 15px;
+    padding: 0px;
 }
 
 .sidebar-messages-header {
     display: flex;
     vertical-align: middle;
+    border-bottom: 1px solid #707070;
     font-weight: bold;
-    padding-bottom: 0px;
+    padding: 10px 0px 10px 0px;
 }
 
-.sidebar-messages-subheader {
+.sidebar-messages-channel-title {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: var(--channel-name-hover-dark);
+    padding-right: 23px;
+}
+
+.sidebar-messages-channel-message {
     vertical-align: middle;
     display: flex;
     align-items: center;
     font-weight: normal;
+    color: var(--channel-name-dark);
     font-size: 14px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 0px;
 }
 
-.sidebar-messages-separator {
-    display: flex;
-    border: 0;
-    border-top: 1px solid #707070;
-    width: 100%;
-    padding-bottom: 10px;
+.channels-list {
+    background-color: var(--accent-primary-dark);
+    border-radius: 15px;
 }
 
 .server-icon {
@@ -262,12 +263,12 @@ hr {
 }
 
 .messages-bar {
-    background-color: var(--accent-secondary-dark);
+    background-color: var(--accent-tertiary-dark);
     display: flex;
     position: relative;
     height: 58px;
     border-radius: 15px;
-    bottom: 80px;
+    bottom: 0px;
 
     textarea {
         display: flex;
@@ -284,10 +285,11 @@ hr {
         padding-left: 15px;
         border-radius: 20px;
 
-        &:focus, &.form-control:focus {
+        &:focus, &.form-control:focus, &:hover {
             outline:none !important;
             outline-width: 0 !important;
             box-shadow: none;
+            border: none;
             -moz-box-shadow: none;
             -webkit-box-shadow: none;
         }

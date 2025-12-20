@@ -11,16 +11,14 @@ pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
                 
                 div {
                     class: "sidebar-messages-header",
-                    h3 {
-                        "# {channel.name}"
+                    div {
+                        class: "sidebar-messages-channel-title",
+                        "#{channel.name}"
                     }
                     div {
-                        class: "sidebar-messages-subheader",
+                        class: "sidebar-messages-channel-message",
                         "Messages for #{channel.name}."
                     }
-                }
-                hr {
-                    class: "sidebar-messages-separator" 
                 }
                 ol {
                     class: "list reverse-list messages-list peony-scrollbar",
@@ -34,6 +32,7 @@ pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
                         }
                     }
                 }
+
                 div {
                     class: "messages-bar",
                     textarea {
