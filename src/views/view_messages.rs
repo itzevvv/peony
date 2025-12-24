@@ -35,6 +35,7 @@ pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
 
                 div {
                     class: "messages-bar",
+                    contenteditable: "true",
                     textarea {
                         placeholder: "Message #{channel.name}"
                     }

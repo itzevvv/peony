@@ -1,23 +1,20 @@
 :root {
-    --accent-primary-dark: #0e0f11;
-    --accent-secondary-dark: #292b2f;
-    --accent-tertiary-dark: #1f1d1d;
-    --accent-hover-dark: #191b1f;
+    --accent-primary-dark: #130f1a;
+    --accent-secondary-dark: #1A1423;
+    --accent-tertiary-dark: #312541;
+    --accent-border: #312541;
+    --accent-hover-dark: #3A2D4E;
+
     --channel-name-dark: #989898;
     --channel-name-hover-dark: #f0f0f0;
+
+    --member-list-section-header-dark: #655b74;
 }
 /* App-wide styling */
 body {
     background-color: var(--accent-primary-dark);
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-hr {
-    display: flex;
-    border: 0;
-    border-top: 1px solid #fff;
-    width: 30px;
 }
 
 .container {
@@ -38,6 +35,47 @@ hr {
 .sidebar-channels {
     width: 14em;
     gap: 100px;
+}
+
+.sidebar-members {
+    background-color: var(--accent-secondary-dark);
+    border-left: 1px solid var(--accent-border);
+    width: 14em;
+    gap: 100px;
+    padding-left: 15px;
+}
+
+.member-list-section-header {
+    color: var(--member-list-section-header-dark);
+    padding-bottom: 12px;
+
+    user-select: none;
+    cursor: default;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.member-list-section-item {
+    display: flex;
+    align-items: center;
+    color: var(--channel-name-dark);
+    height: 2.4em;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    padding-left: 1em;
+
+    &:hover {
+        background-color: var(--accent-hover-dark);
+        color: var(--channel-name-hover-dark);
+
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+    }
 }
 
 .peony-scrollbar {
@@ -78,10 +116,12 @@ hr {
 }
 
 .messages-list {
+    background-color: var(--accent-secondary-dark);
     height: 85%;
 }
 
 .sidebar-messages {
+    background-color: var(--accent-secondary-dark);
     flex-grow: 1;
     padding: 0px;
 }
@@ -89,7 +129,7 @@ hr {
 .sidebar-messages-header {
     display: flex;
     vertical-align: middle;
-    border-bottom: 1px solid #707070;
+    border-bottom: 1px solid var(--accent-border);
     font-weight: bold;
     padding: 10px 0px 10px 0px;
 }
@@ -101,6 +141,7 @@ hr {
     font-size: 18px;
     color: var(--channel-name-hover-dark);
     padding-right: 23px;
+    padding-left: 15px;
 }
 
 .sidebar-messages-channel-message {
@@ -205,17 +246,23 @@ hr {
     align-items: center;
     justify-content: center;
     display: flex;
-    width: 48;
-    height: 48;
+    width: 48px;
+    height: 48px;
     background-color: purple;
     border-radius: 50%;
     overflow: hidden;
+    color: var(--channel-name-hover-dark);
     
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+}
+
+.avatar-small {
+    width: 38px !important;
+    height: 38px !important;
 }
 
 .message {
@@ -265,10 +312,14 @@ hr {
 .messages-bar {
     background-color: var(--accent-tertiary-dark);
     display: flex;
+    overflow:scroll;
     position: relative;
-    height: 58px;
+    margin: auto;
+    height: auto;
+    /* height: 58px; */
     border-radius: 15px;
     bottom: 0px;
+    width: 98%;
 
     textarea {
         display: flex;
@@ -284,6 +335,7 @@ hr {
         padding-top: 18px;
         padding-left: 15px;
         border-radius: 20px;
+        field-sizing: content;
 
         &:focus, &.form-control:focus, &:hover {
             outline:none !important;

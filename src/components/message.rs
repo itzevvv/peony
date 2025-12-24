@@ -1,23 +1,15 @@
 use dioxus::prelude::*;
 
+use crate::components::user_avatar::PeonyUserAvatar;
+
 #[component]
 pub fn Message(display_name : String, timestamp : String, message_content : String) -> Element {
-    let split_name = display_name.split(" ");
-    let mut characters = String::new();
-
-    for subs in split_name {
-        characters.push(subs.chars().next().unwrap());
-    }
+    let passed_display_name = display_name.clone();
     
-    characters.truncate(3);
-
     rsx! {
         div {
             class: "message",
-            div {
-                class: "avatar",
-                "{characters}"
-            },
+            PeonyUserAvatar { display_name: passed_display_name },
             div {
                 class: "contents",
                 div {

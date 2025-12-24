@@ -32,6 +32,6 @@ pub fn PeonyServerView(server_id: String, channel_id : String) -> Element {
     rsx! {
         PeonyChannelsView { server: found_server.clone(), current_channel: found_channel.clone() }
         PeonyMessagesView { channel: found_channel.clone() },
-        //PeonyMembersView { server: found_server.clone(), current_channel: found_channel.clone() }
+        PeonyMembersView { server: found_server.clone(), current_channel: found_channel.clone() }
     }
 }

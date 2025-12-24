@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use crate::datastructures::*;
+use crate::{components::user_avatar::{PeonyUserAvatar, PeonyUserAvatarSmall}, datastructures::*};
 
 #[component]
 pub fn PeonyMembersView(server : Option<ChatServer>, current_channel : Option<ChatChannel>) -> Element {
@@ -38,12 +38,13 @@ pub fn PeonyMembersView(server : Option<ChatServer>, current_channel : Option<Ch
 
     rsx! {
         div {
-            class: "sidebar-channels",
+            class: "sidebar-members",
             if let Some(server) = server {
                 ol {
                     class: "list peony-scrollbar peony-scrollbar-hover",
 
                     li {
+                        class: "member-list-section-header",
                         "Online - {members.len()}"
                     }
 
@@ -51,8 +52,15 @@ pub fn PeonyMembersView(server : Option<ChatServer>, current_channel : Option<Ch
                         li {
                             div {
                                 key: "{member.did}",
-                                class: "channel-name",
-                                p { "{member.display_name}" }
+                                class: "member-list-section-item",
+                                PeonyUserAvatarSmall { display_name: member.display_name.clone() }
+                                div {
+                                    class: "member-list-item-content",
+                                    div {
+                                        class: "member-list-item-name",
+                                        "{member.display_name}"
+                                    }
+                                }
                             }
                         }
                     }

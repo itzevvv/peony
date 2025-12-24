@@ -72,49 +72,49 @@ pub fn testing_peony_data() -> PeonyData {
                 ]
             },
             ChatServer {
-                name: "Einstein".to_string(),
+                name: "Evlylvl Test".to_string(),
                 handle: "einstein.mreow.mrrp.lol".to_string(),
                 did: "did:web:einstein.mreow.mrrp.lol".to_string(),
                 channels: vec![
                     ChatChannel {
                         id: "ISDJIOFDFJIOG".to_string(),
-                        name: "genderal".to_string()
+                        name: "announcements".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG0".to_string(),
-                        name: "test-1".to_string()
+                        name: "genderal".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG1".to_string(),
-                        name: "test-2".to_string()
+                        name: "genderal-2".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG2".to_string(),
-                        name: "test-3".to_string()
+                        name: "genderal-3".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG3".to_string(),
-                        name: "test-4".to_string()
+                        name: "anime-manga".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG4".to_string(),
-                        name: "test-5".to_string()
+                        name: "music".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG5".to_string(),
-                        name: "test-6".to_string()
+                        name: "art".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG6".to_string(),
-                        name: "test-7".to_string()
+                        name: "gamers".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG7".to_string(),
-                        name: "test-8".to_string()
+                        name: "memes-funny-haha".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG8".to_string(),
-                        name: "test-9".to_string()
+                        name: "animanals".to_string()
                     },
                     ChatChannel {
                         id: "ISDJIOFDFJIOG9".to_string(),
