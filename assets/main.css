@@ -10,6 +10,7 @@
 
     --member-list-section-header-dark: #655b74;
 }
+
 /* App-wide styling */
 body {
     background-color: var(--accent-primary-dark);
@@ -38,11 +39,16 @@ body {
 }
 
 .sidebar-members {
+    display: inline-block;
     background-color: var(--accent-secondary-dark);
     border-left: 1px solid var(--accent-border);
-    width: 14em;
     gap: 100px;
     padding-left: 15px;
+}
+
+.sidebar-messages {
+    display: inline-block;
+    width: 85%;
 }
 
 .member-list-section-header {
@@ -82,15 +88,17 @@ body {
     overflow-y: auto;
 }
 
-.peony-scrollbar::-webkit-scrollbar {width: 5px;}
+.peony-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
 
 .peony-scrollbar::-webkit-scrollbar-track {
-    background : transparent;
+    background: transparent;
     border-radius: 10px;
 }
 
-.peony-scrollbar::-webkit-scrollbar-thumb { 
-    background : rgba(92, 92, 92, 0.854);
+.peony-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(92, 92, 92, 0.854);
     border-radius: 10px;
     box-shadow: none;
 }
@@ -120,25 +128,28 @@ body {
     height: 85%;
 }
 
-.sidebar-messages {
+.channel-view {
     background-color: var(--accent-secondary-dark);
     flex-grow: 1;
     padding: 0px;
+}
+
+.channel-view-content {
+    display: flex;
 }
 
 .sidebar-messages-header {
     display: flex;
     vertical-align: middle;
     border-bottom: 1px solid var(--accent-border);
-    font-weight: bold;
-    padding: 10px 0px 10px 0px;
+    padding: 5px 0px 5px 0px;
 }
 
 .sidebar-messages-channel-title {
     vertical-align: middle;
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--channel-name-hover-dark);
     padding-right: 23px;
     padding-left: 15px;
@@ -167,7 +178,7 @@ body {
     background-color: darkslategrey;
     border-radius: 30px;
     overflow: hidden;
-    
+
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
@@ -211,12 +222,12 @@ body {
 .channel-name-selected {
     display: flex;
     align-items: center;
-    
+
     height: 2.4em;
     border-radius: 10px;
     padding-left: 1em;
     gap: 1em;
-    
+
     background-color: var(--accent-hover-dark);
     color: var(--channel-name-hover-dark);
 
@@ -228,7 +239,7 @@ body {
 }
 
 .linkable {
-    color:inherit;
+    color: inherit;
     text-decoration: none
 }
 
@@ -252,7 +263,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     color: var(--channel-name-hover-dark);
-    
+
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
@@ -275,7 +286,7 @@ body {
     word-wrap: break-word;
     word-break: break-all;
     gap: 12px;
-    
+
     &:hover {
         background-color: var(--accent-hover-dark);
     }
@@ -312,7 +323,7 @@ body {
 .messages-bar {
     background-color: var(--accent-tertiary-dark);
     display: flex;
-    overflow:scroll;
+    overflow: scroll;
     position: relative;
     margin: auto;
     height: auto;
@@ -337,8 +348,10 @@ body {
         border-radius: 20px;
         field-sizing: content;
 
-        &:focus, &.form-control:focus, &:hover {
-            outline:none !important;
+        &:focus,
+        &.form-control:focus,
+        &:hover {
+            outline: none !important;
             outline-width: 0 !important;
             box-shadow: none;
             border: none;

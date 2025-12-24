@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 use crate::datastructures::*;
 
 #[component]
-pub fn PeonyChannelsView(server : Option<ChatServer>, current_channel : Option<ChatChannel>) -> Element {
+pub fn PeonyChannelsListView(server : Option<ChatServer>, current_channel : Option<ChatChannel>) -> Element {
     rsx! {
         div {
             class: "sidebar-channels",

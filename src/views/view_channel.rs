@@ -1,25 +1,14 @@
 use dioxus::{html::h3, prelude::*};
 
-use crate::{components::message::Message, datastructures::ChatChannel};
+use crate::{components::message::Message, datastructures::{ChatChannel, ChatServer}, views::view_members::PeonyMembersView};
 
 #[component]
-pub fn PeonyMessagesView(channel : Option<ChatChannel>) -> Element {
+pub fn PeonyChannelView(server : Option<ChatServer>, channel : Option<ChatChannel>) -> Element {
     rsx! {
         if let Some(channel) = channel {
             div {
                 class: "sidebar-messages",
                 
-                div {
-                    class: "sidebar-messages-header",
-                    div {
-                        class: "sidebar-messages-channel-title",
-                        "#{channel.name}"
-                    }
-                    div {
-                        class: "sidebar-messages-channel-message",
-                        "Messages for #{channel.name}."
-                    }
-                }
                 ol {
                     class: "list reverse-list messages-list peony-scrollbar",
                     for _x in 0..4 {
