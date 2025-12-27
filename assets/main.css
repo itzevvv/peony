@@ -16,14 +16,20 @@ body {
     background-color: var(--accent-primary-dark);
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    margin: 0;
 }
 
 .container {
     display: flex;
+    flex: 1;
+    height: 100dvh;
+    width: 100dvw;
 }
 
 .sidebar-servers {
     display: flex;
+    border-right: 1px solid var(--accent-border);
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
@@ -34,12 +40,14 @@ body {
 
 
 .sidebar-channels {
+    padding-left: 10px;
+    padding-right: 10px;
     width: 14em;
     gap: 100px;
 }
 
 .sidebar-members {
-    display: inline-block;
+    width: 16%;
     background-color: var(--accent-secondary-dark);
     border-left: 1px solid var(--accent-border);
     gap: 100px;
@@ -47,8 +55,7 @@ body {
 }
 
 .sidebar-messages {
-    display: inline-block;
-    width: 85%;
+    max-width: 40dvw;
 }
 
 .member-list-section-header {
@@ -114,8 +121,7 @@ body {
 .list {
     list-style-type: none;
     padding-left: 0;
-    gap: 1em;
-    height: 90vh;
+    max-height: 87vh;
 }
 
 .reverse-list {
@@ -124,32 +130,36 @@ body {
 }
 
 .messages-list {
-    background-color: var(--accent-secondary-dark);
-    height: 85%;
+    display: flex;
 }
 
 .channel-view {
     background-color: var(--accent-secondary-dark);
+    flex: 1;
     flex-grow: 1;
     padding: 0px;
 }
 
 .channel-view-content {
     display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-grow: 1;
+    background-color: var(--accent-secondary-dark);
 }
 
 .sidebar-messages-header {
     display: flex;
     vertical-align: middle;
     border-bottom: 1px solid var(--accent-border);
-    padding: 5px 0px 5px 0px;
+    padding: 3px 0px 3px 0px;
 }
 
 .sidebar-messages-channel-title {
     vertical-align: middle;
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--channel-name-hover-dark);
     padding-right: 23px;
     padding-left: 15px;
@@ -161,7 +171,7 @@ body {
     align-items: center;
     font-weight: normal;
     color: var(--channel-name-dark);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .channels-list {
